@@ -38,7 +38,8 @@ const useOpenState = (initialOpen: boolean): [boolean, OpenStateToggle] => {
     () => {
       if (open) {
         const onClose = () => setOpen(false);
-        document.addEventListener("click", onClose);
+        //commenting below line as calendar not opening when mouse click out of scope of ref container
+        //document.addEventListener("click", onClose);
 
         return () => document.removeEventListener("click", onClose);
       }
